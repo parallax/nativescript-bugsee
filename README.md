@@ -1,6 +1,6 @@
 # Bugsee for NativeScript
 
-This plugin adds Bugsee support to your NativeScript application. Record the last 30 seconds of your app before it crashes. Allow people to submit bugs by shaking or screenshotting your app.
+This plugin adds [Bugsee](https://www.bugsee.com) support to your NativeScript application. Record the last 30 seconds of your app before it crashes. Allow people to submit bugs by shaking or screenshotting your app.
 
 ![Demo GIF](https://github.com/parallax/nativescript-bugsee/raw/master/bugsee.gif)
 
