@@ -50,13 +50,13 @@ android.app.Application.extend('org.yourApplicationName.Application', {
 ```
 
 In `app/App_Resources/Android/src/AndroidManifest` change from this:
-```
+```xml
 <application android:name="com.tns.NativeScriptApplication"
 ```
 
 to this - to match the application name above:
 
-```
+```xml
 <application android:name="org.yourApplicationName.Application"
 ```
 
