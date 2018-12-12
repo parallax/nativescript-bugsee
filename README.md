@@ -15,25 +15,26 @@ Describe the prerequisites that the user need to have installed before using you
 To install the plugin do:
 
 ```javascript
-tns plugin add bugsee
+tns plugin add nativescript-bugsee
 ```
 
 ## Usage
 
-Describe any usage specifics for your plugin. Give examples for Android, iOS, Angular if needed. See [nativescript-drop-down](https://www.npmjs.com/package/nativescript-drop-down) for example.
+Put this is your main application JS file:
 
-	```javascript
-    Usage code snippets here
-    ```)
+```
+// Replace this with your actual token
+Bugsee.launchWithToken('0000000-0000-0000-0000-00000000000')
+```
 
-## API
+<!-- ## API
 
 Describe your plugin methods and properties here. See [nativescript-feedback](https://github.com/EddyVerbruggen/nativescript-feedback) for example.
 
 | Property | Default | Description |
 | --- | --- | --- |
 | some property | property default value | property description, default values, etc.. |
-| another property | property default value | property description, default values, etc.. |
+| another property | property default value | property description, default values, etc.. | -->
 
 ## License
 
