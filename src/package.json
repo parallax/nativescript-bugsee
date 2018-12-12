@@ -1,6 +1,6 @@
 {
     "name": "nativescript-bugsee",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "Very rough test of a NativeScript plugin",
     "main": "bugsee",
     "typings": "index.d.ts",

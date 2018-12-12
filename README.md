@@ -1,14 +1,8 @@
 # Bugsee for NativeScript
 
-## WARNING: Work-in-progress
+This plugin adds Bugsee support to your NativeScript application. Record the last 30 seconds of your app before it crashes. Allow people to submit bugs by shaking or screenshotting your app.
 
-<!-- Add your plugin badges here. See [nativescript-urlhandler](https://github.com/hypery2k/nativescript-urlhandler) for example. -->
-
-This plugin adds Bugsee support to your NativeScript application.
-
-<!-- ## (Optional) Prerequisites / Requirements
-
-Describe the prerequisites that the user need to have installed before using your plugin. See [nativescript-firebase plugin](https://github.com/eddyverbruggen/nativescript-plugin-firebase) for example. -->
+![Demo GIF](https://github.com/parallax/nativescript-bugsee/raw/master/bugsee.gif)
 
 ## Installation
 
@@ -20,12 +14,53 @@ tns plugin add nativescript-bugsee
 
 ## Usage
 
+### iOS
+
 Put this is your main application JS file:
 
 ```
 // Replace this with your actual token
 Bugsee.launchWithToken('0000000-0000-0000-0000-00000000000')
 ```
+
+### Android
+
+This is a little trickier as it needs to extend the main Application class.
+
+Create this file at app/application.android.js:
+
+(Replace yourApplicationName with your app name, and the token with your Android token)
+
+```
+/* global android com */
+const superProto = android.app.Application.prototype
+const Bugsee = com.bugsee.library.Bugsee
+
+// the first parameter of the `extend` call defines the package and the name for the native *.JAVA file generated.
+android.app.Application.extend('org.yourApplicationName.Application', {
+  onCreate: function () {
+    superProto.onCreate.call(this)
+    // At this point modules have already been initialized
+    Bugsee.launch(this, '0000000-0000-0000-0000-00000000000')
+  },
+  attachBaseContext: function (base) {
+    superProto.attachBaseContext.call(this, base)
+  }
+})
+```
+
+In `app/App_Resources/Android/src/AndroidManifest` change from this:
+```
+<application android:name="com.tns.NativeScriptApplication"
+```
+
+to this - to match the application name above:
+
+```
+<application android:name="org.yourApplicationName.Application"
+```
+
+
 
 <!-- ## API
 
