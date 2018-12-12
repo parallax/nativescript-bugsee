@@ -8,7 +8,7 @@ This plugin adds Bugsee support to your NativeScript application. Record the las
 
 To install the plugin do:
 
-```javascript
+```bash
 tns plugin add nativescript-bugsee
 ```
 
@@ -18,7 +18,7 @@ tns plugin add nativescript-bugsee
 
 Put this is your main application JS file:
 
-```
+```javascript
 // Replace this with your actual token
 Bugsee.launchWithToken('0000000-0000-0000-0000-00000000000')
 ```
@@ -27,11 +27,11 @@ Bugsee.launchWithToken('0000000-0000-0000-0000-00000000000')
 
 This is a little trickier as it needs to extend the main Application class.
 
-Create this file at app/application.android.js:
+Create this file at `app/application.android.js`:
 
 (Replace yourApplicationName with your app name, and the token with your Android token)
 
-```
+```javascript
 /* global android com */
 const superProto = android.app.Application.prototype
 const Bugsee = com.bugsee.library.Bugsee
