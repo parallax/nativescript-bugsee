@@ -20,7 +20,9 @@ Put this is your main application JS file:
 
 ```javascript
 // Replace this with your actual token
-Bugsee.launchWithToken('0000000-0000-0000-0000-00000000000')
+if (Platform.isIOS) {
+  Bugsee.launchWithToken('0000000-0000-0000-0000-00000000000')
+}
 ```
 
 ### Android
